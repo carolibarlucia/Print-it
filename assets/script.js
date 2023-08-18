@@ -19,14 +19,10 @@ const slides = [
 
 let nombre = slides.length;
 
-let i = slides[0];
-
 let imgElement = document.getElementById("banner-image");
 let baseurl = "./assets/images/slideshow/"; 
 
 let textElement = document.getElementById("banner-tagline");
-
-
 
 let index = 0
 
@@ -38,7 +34,7 @@ if (index == nombre -1){
 	index++
 }
 	imgElement.setAttribute("src", baseurl + slides[index].image)
-	textElement = slides[index].tagLine;
+	textElement.innerHTML = (slides[index].tagLine)
 }
 
 function previous(){
@@ -48,7 +44,7 @@ if (index ==0){
 	index--
 }
 	imgElement.setAttribute("src", baseurl + slides[index].image)
-	textElement = slides[index].tagLine;
+	textElement.innerHTML = (slides[index].tagLine)
 }
 
 let precedent = document.getElementById("left");
@@ -64,20 +60,3 @@ suivant.addEventListener("click", function() {
 	console.log("clic sur >")
 	next()
 });
-
-
-
-let compteur = 0
-while (compteur < nombre){
-	compteur++
-	let bulletPoint = document.createElement("p");
-	bulletPoint.classList.add("dot");
-	let bullet = document.getElementById("points");
-	bullet.appendChild(bulletPoint);
-	console.log("one point")
-}
-//	for (i = 0; i < nombre; i++) {
-//		document.querySelector(".dots").innerHTML = document.write(dot2);
-	
-//		console.log("return dot")
-//	}
